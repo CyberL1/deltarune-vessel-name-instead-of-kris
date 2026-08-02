@@ -35,13 +35,13 @@ switch (chapter)
   };
   return text;");
 
-  var msgset = Data.Scripts.ByName("msgset")?.Code;
+  var msgsetDemo = Data.Scripts.ByName("msgset")?.Code;
 
-  if (msgset is not UndertaleCode) {
+  if (msgsetDemo is not UndertaleCode) {
     ScriptError("msgset is missing");
   }
 
-  importGroup.QueueFindReplace(msgset, "global.msg[arg0] = arg1;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
+  importGroup.QueueFindReplace(msgsetDemo, "global.msg[arg0] = arg1;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
     arg1 = string_replace(arg1, ""KRIS"", global.othername[0]);
     arg1 = string_replace(arg1, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
     arg1 = string_replace(arg1, ""K.."", string_char_at(global.othername[0], 1) + ""..."");
@@ -58,6 +58,38 @@ switch (chapter)
     text = string_replace(text, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
   };
   return text;");
+  break;
+  case "2":
+  case "3":
+  case "4":
+  case "5":
+  var msgset = Data.Scripts.ByName("msgset")?.Code;
+
+  if (msgset is not UndertaleCode) {
+    ScriptError("msgset is missing");
+  }
+
+  importGroup.QueueFindReplace(msgset, "global.msg[arg0] = arg1;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
+    arg1 = string_replace(arg1, ""KRIS"", global.othername[0]);
+    arg1 = string_replace(arg1, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    arg1 = string_replace(arg1, ""K.."", string_char_at(global.othername[0], 1) + ""..."");
+    arg1 = string_replace(arg1, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
+  };
+  global.msg[arg0] = arg1;");
+
+  var stringset = Data.Scripts.ByName("stringset")?.Code;
+
+  if (stringset is not UndertaleCode) {
+    ScriptError("stringset is missing");
+  }
+
+  importGroup.QueueFindReplace(stringset, "return arg0;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
+    arg0 = string_replace(arg0, ""KRIS"", global.othername[0]);
+    arg0 = string_replace(arg0, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    arg0 = string_replace(arg0, ""K.."", string_char_at(global.othername[0], 1) + ""..."");
+    arg0 = string_replace(arg0, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
+  };
+  return arg0;");
   break;
   default:
   ScriptError("Invalid chapter");
