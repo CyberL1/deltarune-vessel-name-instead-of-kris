@@ -48,6 +48,20 @@ switch (chapter)
     arg1 = string_replace(arg1, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
   };
   global.msg[arg0] = arg1;");
+
+  var stringsetDemo = Data.Scripts.ByName("stringset")?.Code;
+
+  if (stringsetDemo is not UndertaleCode) {
+    ScriptError("stringset is missing");
+  }
+
+  importGroup.QueueFindReplace(stringsetDemo, "return arg0;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
+    arg0 = string_replace(arg0, ""KRIS"", global.othername[0]);
+    arg0 = string_replace(arg0, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    arg0 = string_replace(arg0, ""K.."", string_char_at(global.othername[0], 1) + ""..."");
+    arg0 = string_replace(arg0, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
+  };
+  return arg0;");
   break;
   case "1":
   importGroup.QueueFindReplace(scr_84_get_lang_string, "return ds_map_find_value(global.lang_map, arg0);", @"var text = ds_map_find_value(global.lang_map, arg0);
