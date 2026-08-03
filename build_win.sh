@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Require: xdelta (https://github.com/jmacd/xdelta/releases)
-# Usage: ./patch.sh path/to/UndertaleModToolCli path/to/data.win
+# Usage: ./build_win.sh path/to/xdelta path/to/original_data.win path/to/file.xdelta path/to/modded_data.win
 
 CLI_PATH=$1
 ORIGINAL_DATA_PATH=$2
