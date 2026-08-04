@@ -13,7 +13,7 @@ echo "Patching game files"
 if test -f $GAMES_PATH/DELTARUNEdemo/data.win; then
   DATA_PATH=$GAMES_PATH/DELTARUNEdemo/data.win
 
-  xdelta -fds $DATA_PATH out/demo.xdelta $DATA_PATH.mod
+  $XDELTA_CLI_PATH -fds $DATA_PATH out/demo.xdelta $DATA_PATH.mod
   rm $DATA_PATH
   mv $DATA_PATH.mod $DATA_PATH
 else
@@ -24,7 +24,7 @@ for chapter in 1 2 3 4 5; do
   DATA_PATH=$GAMES_PATH/DELTARUNE/chapter"$chapter"_windows/data.win
 
   if test -f $DATA_PATH; then
-    xdelta -fds $DATA_PATH out/chapter"$chapter".xdelta $DATA_PATH.mod
+    $XDELTA_CLI_PATH -fds $DATA_PATH out/chapter"$chapter".xdelta $DATA_PATH.mod
     rm $DATA_PATH
     mv $DATA_PATH.mod $DATA_PATH
   else
