@@ -31,4 +31,3 @@ for chapter in 1 2 3 4 5; do
     echo $DATA_PATH not found, skipping
   fi
 done
-
