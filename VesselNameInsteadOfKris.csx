@@ -34,7 +34,6 @@ void replaceLangString()
 
 void replaceLangStringCh1()
 {
-  ScriptMessage("lang_string_ch1");
   var scr_84_get_lang_string_ch1 = Data.Scripts.ByName("scr_84_get_lang_string_ch1")?.Code;
 
   if (scr_84_get_lang_string_ch1 is not UndertaleCode) {
