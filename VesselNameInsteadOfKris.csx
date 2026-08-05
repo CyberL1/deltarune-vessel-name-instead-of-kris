@@ -27,6 +27,7 @@ void replaceLangString()
     text = string_replace_all(text, ""OK"", ""[TEMP_OK]"");
 
     text = string_replace_all(text, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    text = string_replace_all(text, ""Kr.."", string_char_at(global.othername[0], 1) + string_char_at(string_lower(global.othername[0]), 2) + "".."");
     text = string_replace_all(text, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     text = string_replace_all(text, ""[TEMP_OK]"", ""OK"");
@@ -53,6 +54,7 @@ void replaceLangStringCh1()
     text = string_replace_all(text, ""OK"", ""[TEMP_OK]"");
 
     text = string_replace_all(text, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    text = string_replace_all(text, ""Kr.."", string_char_at(global.othername[0], 1) + string_char_at(string_lower(global.othername[0]), 2) + "".."");
     text = string_replace_all(text, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     text = string_replace_all(text, ""[TEMP_OK]"", ""OK"");
@@ -78,6 +80,7 @@ void replaceMsgSet()
     arg1 = string_replace_all(arg1, ""OK"", ""[TEMP_OK]"");
 
     arg1 = string_replace_all(arg1, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    arg1 = string_replace_all(arg1, ""Kr.."", string_char_at(global.othername[0], 1) + string_char_at(string_lower(global.othername[0]), 2) + "".."");
     arg1 = string_replace_all(arg1, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     arg1 = string_replace_all(arg1, ""[TEMP_OK]"", ""OK"");
@@ -103,6 +106,7 @@ void replaceStringSet()
     arg0 = string_replace_all(arg0, ""OK"", ""[TEMP_OK]"");
 
     arg0 = string_replace_all(arg0, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    arg0 = string_replace_all(arg0, ""Kr.."", string_char_at(global.othername[0], 1) + string_char_at(string_lower(global.othername[0]), 2) + "".."");
     arg0 = string_replace_all(arg0, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     arg0 = string_replace_all(arg0, ""[TEMP_OK]"", ""OK"");
