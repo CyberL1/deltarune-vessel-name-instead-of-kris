@@ -21,13 +21,13 @@ void replaceLangString()
 
   importGroup.QueueFindReplace(scr_84_get_lang_string, "return ds_map_find_value(global.lang_map, arg0);", @"var text = ds_map_find_value(global.lang_map, arg0);
   if (variable_global_exists(""othername"") && is_array(global.othername)) {
-    text = string_replace(text, ""KRIS"", global.othername[0]);
-    text = string_replace(text, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    text = string_replace_all(text, ""KRIS"", global.othername[0]);
+    text = string_replace_all(text, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
 
     text = string_replace_all(text, ""OK"", ""[TEMP_OK]"");
 
-    text = string_replace(text, ""K.."", string_char_at(global.othername[0], 1) + "".."");
-    text = string_replace(text, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
+    text = string_replace_all(text, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    text = string_replace_all(text, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     text = string_replace_all(text, ""[TEMP_OK]"", ""OK"");
   };
@@ -47,13 +47,13 @@ void replaceLangStringCh1()
 
   importGroup.QueueFindReplace(scr_84_get_lang_string_ch1, "return ds_map_find_value(global.lang_map, arg0);", @"var text = ds_map_find_value(global.lang_map, arg0);
   if (variable_global_exists(""othername"") && is_array(global.othername)) {
-    text = string_replace(text, ""KRIS"", global.othername[0]);
-    text = string_replace(text, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    text = string_replace_all(text, ""KRIS"", global.othername[0]);
+    text = string_replace_all(text, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
 
     text = string_replace_all(text, ""OK"", ""[TEMP_OK]"");
 
-    text = string_replace(text, ""K.."", string_char_at(global.othername[0], 1) + "".."");
-    text = string_replace(text, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
+    text = string_replace_all(text, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    text = string_replace_all(text, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     text = string_replace_all(text, ""[TEMP_OK]"", ""OK"");
   };
@@ -72,13 +72,13 @@ void replaceMsgSet()
   }
 
   importGroup.QueueFindReplace(msgset, "global.msg[arg0] = arg1;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
-    arg1 = string_replace(arg1, ""KRIS"", global.othername[0]);
-    arg1 = string_replace(arg1, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    arg1 = string_replace_all(arg1, ""KRIS"", global.othername[0]);
+    arg1 = string_replace_all(arg1, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
 
     arg1 = string_replace_all(arg1, ""OK"", ""[TEMP_OK]"");
 
-    arg1 = string_replace(arg1, ""K.."", string_char_at(global.othername[0], 1) + "".."");
-    arg1 = string_replace(arg1, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
+    arg1 = string_replace_all(arg1, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    arg1 = string_replace_all(arg1, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     arg1 = string_replace_all(arg1, ""[TEMP_OK]"", ""OK"");
   };
@@ -97,13 +97,13 @@ void replaceStringSet()
   }
 
   importGroup.QueueFindReplace(stringset, "return arg0;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
-    arg0 = string_replace(arg0, ""KRIS"", global.othername[0]);
-    arg0 = string_replace(arg0, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    arg0 = string_replace_all(arg0, ""KRIS"", global.othername[0]);
+    arg0 = string_replace_all(arg0, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
 
     arg0 = string_replace_all(arg0, ""OK"", ""[TEMP_OK]"");
 
-    arg0 = string_replace(arg0, ""K.."", string_char_at(global.othername[0], 1) + "".."");
-    arg0 = string_replace(arg0, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
+    arg0 = string_replace_all(arg0, ""K.."", string_char_at(global.othername[0], 1) + "".."");
+    arg0 = string_replace_all(arg0, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     arg0 = string_replace_all(arg0, ""[TEMP_OK]"", ""OK"");
   };
