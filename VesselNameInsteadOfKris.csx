@@ -124,7 +124,7 @@ void replaceStringSet()
     arg0 = string_replace_all(arg0, ""K-"", string_char_at(global.othername[0], 1) + ""-"");
 
     arg0 = string_replace_all(arg0, ""[TEMP_OK]"", ""OK"");
-    arg0 = string_replace_all(arg0, ""[TEMP_cK]"", ""CK"");
+    arg0 = string_replace_all(arg0, ""[TEMP_CK]"", ""CK"");
     arg0 = string_replace_all(arg0, ""[TEMP_RK]"", ""RK"");
   };
   return arg0;");
