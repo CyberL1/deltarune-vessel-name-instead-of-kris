@@ -23,6 +23,7 @@ void replaceLangString()
   if (variable_global_exists(""othername"") && is_array(global.othername)) {
     text = string_replace_all(text, ""KRIS"", global.othername[0]);
     text = string_replace_all(text, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    text = string_replace_all(text, ""kris"", string_lower(global.othername[0]));
 
     text = string_replace_all(text, ""OK"", ""[TEMP_OK]"");
     text = string_replace_all(text, ""CK"", ""[TEMP_CK]"");
@@ -54,6 +55,7 @@ void replaceLangStringCh1()
   if (variable_global_exists(""othername"") && is_array(global.othername)) {
     text = string_replace_all(text, ""KRIS"", global.othername[0]);
     text = string_replace_all(text, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    text = string_replace_all(text, ""kris"", string_lower(global.othername[0]));
 
     text = string_replace_all(text, ""OK"", ""[TEMP_OK]"");
     text = string_replace_all(text, ""CK"", ""[TEMP_CK]"");
@@ -84,6 +86,7 @@ void replaceMsgSet()
   importGroup.QueueFindReplace(msgset, "global.msg[arg0] = arg1;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
     arg1 = string_replace_all(arg1, ""KRIS"", global.othername[0]);
     arg1 = string_replace_all(arg1, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    arg1 = string_replace_all(arg1, ""kris"", string_lower(global.othername[0]));
 
     arg1 = string_replace_all(arg1, ""OK"", ""[TEMP_OK]"");
     arg1 = string_replace_all(arg1, ""CK"", ""[TEMP_CK]"");
@@ -114,6 +117,7 @@ void replaceStringSet()
   importGroup.QueueFindReplace(stringset, "return arg0;", @"if (variable_global_exists(""othername"") && is_array(global.othername)) {
     arg0 = string_replace_all(arg0, ""KRIS"", global.othername[0]);
     arg0 = string_replace_all(arg0, ""Kris"", string_char_at(global.othername[0], 1) + string_copy(string_lower(global.othername[0]), 2, string_length(global.othername[0]) - 1));
+    arg0 = string_replace_all(arg0, ""kris"", string_lower(global.othername[0]));
 
     arg0 = string_replace_all(arg0, ""OK"", ""[TEMP_OK]"");
     arg0 = string_replace_all(arg0, ""CK"", ""[TEMP_CK]"");
